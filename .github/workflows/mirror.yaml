@@ -6,15 +6,15 @@ on:
       IMAGE_NAME:
         description: '原镜像名称'
         required: true
-        default: 'mysql/mysql-server'
+        default: 'onlyoffice/documentserver'
       NEW_NAME:
         description: '同步后镜像名称'
         required: true
-        default: 'mysql-server'
+        default: 'onlyoffice/documentserver'
       IMAGE_VERSION:
         description: '镜像版本'
         required: true
-        default: 'latest'
+        default: '8.1'
       TARGET_REGISTRY:
         description: '仓库地址'
         required: true
@@ -22,7 +22,7 @@ on:
       TARGET_REPOSITORY:
         description: '空间名称'
         required: true
-        default: 'jeecgdocker'
+        default: 'mx_habor'
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
       QYWX_ROBOT_URL: ${{ secrets.QYWX_ROBOT_URL }}
     steps:
       - name: Login to Docker Registry
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ github.event.inputs.TARGET_REGISTRY }}
+        run: docker login -u hoe96 -p 1996Hh2700 ${{ github.event.inputs.TARGET_REGISTRY }}
 
       - name: Pull, tag, and push Docker image
         run: |
