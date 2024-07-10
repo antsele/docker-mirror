@@ -22,7 +22,7 @@ on:
       TARGET_REPOSITORY:
         description: '空间名称'
         required: true
-        default: 'mx_habor'
+        default: 'mx_habor/hoe'
 
 jobs:
   build:
